@@ -24,8 +24,7 @@ Students will learn how to:
 - 💻 **Code** — Python scripts and Jupyter notebooks  
 - 📊 **Slides** — Lecture materials (PPT/PDF)  
 - 📝 **Instructions** — See the Instruction file more understand  
-- 🚀 **Projects** — Example implementations  
-- 📁 **Datasets** — Data or download instructions  
+ 
 
 ---
 
