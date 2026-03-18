@@ -1,0 +1,101 @@
+INSTRUCTIONS.txt
+
+===========================================
+WELCOME TO IMAGECLEF DEEPFAKE 2026 SERVER
+===========================================
+
+Groups: 
+1. GoToGermany
+User: gotogermany@114.71.219.42
+Pwd: pwd123456
+
+2. LIAO
+User: liao@114.71.219.42
+Pwd: pwd123456
+
+3. Deepfake1
+User: deepfake_1@114.71.219.43
+Pwd: pwd123456
+
+4. G2D_Net
+User: g2d_net@114.71.219.43
+Pwd: pwd123456
+
+5. Youtuber
+User: youtuber@114.71.219.41
+Pwd: pwd123456
+
+5. Chaboom
+User: chaboom@114.71.219.41
+Pwd: pwd123456
+
+
+OPEN VSCODE (Install: Remote SSH)
+===========================================
+Press: "Ctrl  + Shift + p"
+Type: "Connect to Host"
+
+STEP 1: LOGIN (VSCODE)
+-------------
+user:  liao@114.71.219.42
+Pwd: pwd123456
+
+STEP 2: CREATE PROJECT FOLDER
+------------------------------
+mkdir GEN_AI_COMPETITION_NAME
+cd GEN_AI_COMPETITION_NAME
+
+STEP 3: CREATE PROJECT FOLDER
+------------------------------
+Save as Workspace As
+
+STEP 4: CREATE ENIVORMENT
+------------------------------
+-- Open Terminal: ---
+
+-- Install uv (run as YOUR user):
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
+
+cd GEN_AI_COMPETITION_NAME
+uv venv
+source .venv/bin/activate
+
+# 3. Install libraries:
+uv pip install notebook ipykernel numpy matplotlib pillow torch
+
+STEP 5: START DOCKER CONTAINER
+-------------------------------
+docker run -it --rm \-v /datasets:/datasets \-v $HOME:/home/student \--gpus all \aimultimedialab/ai4mediabench-default:latest \bash
+
+STEP 5: INSIDE CONTAINER
+------------------------
+cd GEN_AI_COMPETITION_NAME
+# Verify data access:
+# Your home folder is mounted at /home/student
+cd /home/student/GEN_AI_COMPETITION_NAME
+ls /datasets/competition
+# Expected: Deepfake_Generation_Images_and_Audio
+
+# Run your code (use python3):
+python check_data.py
+# Expected: Deepfake_Generation_Images_and_Audio
+
+
+## Verify Python & GPU
+# Check Python (use python3, not python)
+python3 --version
+# Expected: Python 3.x.x
+
+# Check GPU access
+nvidia-smi
+# Expected: Table showing your NVIDIA GPU
+
+## Code:-
+import os
+data_path = "/datasets/competition"
+print("✅ Dataset exists:", os.path.exists(data_path))
+if os.path.exists(data_path):
+    print("📁 Files:", os.listdir(data_path))
+
+Good luck! 🎯
