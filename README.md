@@ -1,4 +1,4 @@
-# 🎓 Generative AI Competition
+# 🎓 Generative AI Competition: Setup Guide
 
 <p align="center">
   <b>Learn • Build • Compete</b><br>
